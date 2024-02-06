@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "db:dev:rm": "docker compose rm mongo_dev -s -f -v",
+    "db:dev:up": "docker compose up mongo_dev -d",
+    "db:dev:stop": "docker stop MongoDev",
+    "db:dev:start": "docker start MongoDev",
+    "db:dev:restart": "docker stop MongoDev && docker start MongoDev",
+    "start": "node server.js",
+    "watch": "node --watch app.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
